@@ -3437,7 +3437,7 @@ figure {
 }
 
 .section.hero {
-    padding-top: 80px
+    padding-top: 150px
 }
 
 .section.home-about {
@@ -3518,6 +3518,13 @@ figure {
     line-height: 9rem
 }
 
+.hero-big-text-try {
+    font-family: DM Sans, sans-serif;
+    font-size: 9rem;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 9rem
+}
 
 
 
@@ -6413,4 +6420,33 @@ figure {
         font-size: 1.5rem;
         font-weight: 500
     }
+}
+/* New hero-big-text-home class with responsive resizing */
+.hero-big-text-home {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 5rem;
+  font-style: normal;
+  font-weight: 200;
+  line-height: 5rem;
+}
+
+@media screen and (max-width: 991px) {
+  .hero-big-text-home {
+    font-size: 4.5rem;
+    line-height: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero-big-text-home {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .hero-big-text-home {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
 }
