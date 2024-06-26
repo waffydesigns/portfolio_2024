@@ -1,11 +1,12 @@
 /* styles.css */
 
-/* Base styles */
+/* Base styles */ 
 .scroll-section {
     width: 100%;
     overflow: hidden;
     position: relative;
     margin: 20px auto;
+    padding-bottom: 30px;
 }
 
 .scroll-container {
@@ -23,29 +24,33 @@
     height: 100px; /* Adjust height as needed */
     margin: 0 10px; /* Adjust margin between images */
     object-fit: contain; /* Ensure images maintain aspect ratio */
-    background-color: #f0f0f0; /* Placeholder color */
+    background-color: #f0f0f000; /* Placeholder color */
 }
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
+    
+    .scroll-content {
+        display: flex;
+        transition: transform 1.2s ease; /* Smooth transition for transform */
+    }
+
     .scroll-content img {
-        height: 80px; /* Adjust height for smaller screens */
-        margin: 0 5px; /* Adjust margin for smaller screens */
+        height: 30px; /* Adjust height for smaller screens */
+        margin: 0 24px; /* Adjust margin for smaller screens */
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .scroll-content img {
-        height: 120px; /* Adjust height for tablets */
-        margin: 0 8px; /* Adjust margin for tablets */
+        height: 50px; /* Adjust height for tablets */
+        margin: 0 32px; /* Adjust margin for tablets */
     }
 }
 
 @media (min-width: 1025px) {
     .scroll-content img {
-        filter: contrast(40);
-        filter: grayscale(600);
-        height: 80px; /* Adjust height for desktops */
+        height: 44px; /* Adjust height for desktops */
         margin: 36px; /* Adjust margin for desktops */
     }
 }
