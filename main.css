@@ -3582,7 +3582,7 @@ figure {
 }
 
 .div-arrow {
-    background-image: url(https://cdn.prod.website-files.com/6633116569d9f2aaab85788d/66334c775696aeb195983cb1_thin-long-arrow-bottom-icon.svg);
+    background-image: url(images/circulartextlogo.png);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: 20px;
@@ -4142,9 +4142,9 @@ figure {
     display: flex
 }
 
-.footer-logo-wrap {
+/*.footer-logo-wrap {
     filter: invert()
-}
+}*/
 
 .footer-logo {
     max-width: 100%
@@ -4217,7 +4217,7 @@ figure {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin-top: 15px;
+    margin-top: 36px;
     display: flex
 }
 
