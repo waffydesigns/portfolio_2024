@@ -5,8 +5,8 @@
     width: 100%;
     overflow: hidden;
     position: relative;
-    margin: 20px auto;
-    padding-bottom: 30px;
+    margin: 0px auto;
+    padding-bottom: 10px;
 }
 
 .scroll-container {
@@ -25,10 +25,12 @@
     margin: 0 10px; /* Adjust margin between images */
     object-fit: contain; /* Ensure images maintain aspect ratio */
     background-color: #f0f0f000; /* Placeholder color */
+    flex-shrink: 0;
 }
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
+    
     
     .scroll-content {
         display: flex;
@@ -36,21 +38,21 @@
     }
 
     .scroll-content img {
-        height: 30px; /* Adjust height for smaller screens */
-        margin: 0 24px; /* Adjust margin for smaller screens */
+        height: 40px; /* Adjust height for smaller screens */
+        margin: 8px; /* Adjust margin for smaller screens */
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .scroll-content img {
         height: 50px; /* Adjust height for tablets */
-        margin: 0 32px; /* Adjust margin for tablets */
+        margin: 24px; /* Adjust margin for tablets */
     }
 }
 
 @media (min-width: 1025px) {
     .scroll-content img {
         height: 44px; /* Adjust height for desktops */
-        margin: 36px; /* Adjust margin for desktops */
+        margin: 24px; /* Adjust margin for desktops */
     }
 }

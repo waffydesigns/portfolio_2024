@@ -1,0 +1,213 @@
+/* Parallax container styling */
+.prlx-view {
+    position: relative;
+    overflow: hidden;
+    height: 700px; /* Adjust as needed */
+    width: 100%; /* Ensure it stretches to full width */
+    margin: 0; /* Remove default margins */
+    margin-top: 60px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0; /* Remove padding if needed */
+}
+
+/* Image styling to fill the entire viewport */
+.prlx-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;  /* Ensures the image fully covers the container */
+    z-index: -1; /* Ensure it stays in the background */
+}
+
+/* Foreground Content */
+.prlx-content {
+    max-width: 100%;
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for perfect centering */
+    text-align: center;
+    color: white; /* White text for contrast */
+    z-index: 2; /* Above the background */
+}
+
+/* Text Styling */
+.prlx-text {
+    white-space: nowrap; /* Prevent text from breaking into multiple lines */
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: DM Sans, sans-serif;
+    font-size: 5.2rem;
+    font-weight: 500;
+    line-height: 6.2rem
+    /*font-size: 2.5rem; 
+    font-weight: bold;
+    margin-bottom: 20px; 
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for contrast */
+}
+
+/* Button Styling */
+.prlx-button {
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    color: black; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem; /* Adjust button text size */
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Add depth with shadow */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.prlx-button:hover {
+    background-color: black; /* Invert colors on hover */
+    color: white;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 479px) {
+    .prlx-view {
+        height: 60vh; /* Reduce height for smaller screens */
+    }
+
+    .prlx-text {
+        font-size: 2rem; /* Smaller font size */
+        line-height: normal;
+    }
+
+    .prlx-button {
+        font-size: 1rem; /* Adjust button size for smaller screens */
+    }
+}
+
+
+
+/* Dark overlay and centered image */
+.prlx-view::after {
+    content: ''; /* Empty content */
+    position: absolute;
+    top: 0;                      
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: contain; /* Ensure the image fits within the container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    background-color: rgba(12, 12, 12, 0.5); /* Dark overlay */
+    pointer-events: none; /* Make sure it doesn’t block interactions */
+    z-index: 0; /* Make sure it's behind other elements */
+}
+
+/* Popup Overlay (covers viewport) */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black */
+    display: none; /* Hidden by default */
+    z-index: 10000; /* Highest z-index to ensure it covers everything */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Popup Container */
+.popup-container {
+    position: relative;
+    width: 80vw; /* Full viewport width by default */
+    height: 80vh; /* Full viewport height by default */
+    background-color: white; /* White background for the popup */
+    display: flex; /* Flex layout for centering content */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent scrolling within the container */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+/* Close Button */
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Popup Image */
+.popup-image {
+    max-width: calc(100% - 30px); /* Account for 30px margin on each side */
+    max-height: calc(100% - 30px); /* Account for 30px margin on top and bottom */
+    object-fit: contain; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth rotation */
+}
+
+.popup-note {
+    position: absolute;
+    bottom: 10px;
+    right: 24px;
+    font-size: 0.8rem; /* Small font size */
+    color: rgba(0, 0, 0, 0.6); /* Subtle text color */
+    text-align: left; /* Align text to the right */
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Prevent scrolling when the popup is open */
+body.no-scroll {
+    overflow: hidden; /* Disable scrolling */
+}
+
+
+
+/* Responsiveness */
+@media (max-width: 479px) {
+   
+
+    .popup-note {
+       
+        transform-origin: bottom right;
+        transform: rotate(90deg);
+        bottom: 16px;
+        left: -340px;
+        right: 322px;
+        
+    }
+        
+   /*     .popup-note {
+        transform-origin: bottom left;
+        transform: rotate(90deg);
+        bottom: 363px;
+        left: -39px;
+        top: 302px;
+    }*/    
+
+
+    .popup-close {
+        font-size: 1.2rem; /* Reduce size of close button */
+    }
+    
+
+    .popup-container {
+        
+        width: calc(100%-30px); /* Full viewport width by default */
+        height: calc(100%-30px); /* Full viewport height by default */
+     }
+
+    .popup-image {
+        transform: rotate(90deg); /* Rotate the image 90 degrees */
+        max-width: calc(190% - 10px); /* Account for 30px margin on each side */
+        max-height: 100%; /* Account for 30px margin on top and bottom */
+    }
+}
+
+
+
+

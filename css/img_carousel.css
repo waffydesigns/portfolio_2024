@@ -1,0 +1,123 @@
+/* Define default dot colors using CSS variables */
+:root {
+    --dot-active-color: white; /* Default active dot color */
+    --dot-inactive-color: rgba(255, 255, 255, 0.5); /* Default inactive dot color */
+}
+
+/* Gradient effect on the sides (hidden by default) */
+.carousel-container::before,
+.carousel-container::after {
+    content: '';
+    position: absolute;
+    top: 0; /* Full height */
+    bottom: 0;
+    width: 100px;
+    pointer-events: none; /* Allow clicks to pass through */
+    z-index: 1;
+    background: linear-gradient(to right, #ebebeb, transparent); /* Gradient color */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Smooth fade-in effect */
+}
+
+/* Show gradient and arrows when hovering over the carousel container */
+.carousel-container:hover::before,
+.carousel-container:hover::after,
+.carousel-container:hover .carousel-arrow {
+    opacity: 1; /* Show gradients and arrows */
+}
+
+/* Carousel container styling */
+.carousel-container {
+    position: relative;
+    width: 100%; /* Full width carousel */
+    height: fit-content; /* Full height with 60px padding at top */
+    max-width: 100%;
+    overflow: hidden;
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+
+/* Carousel styling */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+/* Carousel images */
+.carousel-image {
+    min-width: 100%; /* Show one image at a time */
+    height: 100%;
+    object-fit: contain; /* Ensure full image is shown without cropping */
+}
+
+/* Arrow visibility */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(59, 59, 59, 0.014);
+    border: none;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 2;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease; /* Smooth fade-in effect */
+}
+
+/* Position arrows correctly */
+.carousel-arrow-left {
+    left: 10px; /* Fix position to the left */
+}
+
+.carousel-arrow-right {
+    right: 10px; /* Fix position to the right */
+}
+
+/* Only show arrows and gradients when hovering over the carousel */
+.carousel-container:hover .carousel-arrow {
+    opacity: 1; /* Show arrows on hover */
+}
+
+/* Gradient positions */
+.carousel-container::before {
+    left: 0;
+}
+
+.carousel-container::after {
+    right: 0;
+    transform: rotate(180deg); /* Flip the gradient on the right side */
+}
+
+/* Slider indicators */
+.carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.carousel-indicators .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--dot-inactive-color); /* Use the inactive color variable */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-indicators .dot.active {
+    background-color: var(--dot-active-color); /* Use the active color variable */
+}
+
+
+@media screen and (max-width:767px){
+    .carousel-container{
+        padding-top: 20px;
+    }
+}
