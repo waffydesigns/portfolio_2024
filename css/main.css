@@ -4452,6 +4452,19 @@ figure {
     border-bottom: 3px solid #000
 }
 
+.underline-span.red {
+    border-bottom: 3px solid #f55344;
+}
+
+.underline-span2 {
+    font-size: medium;
+    font-style: italic;
+    font-weight: 200;
+    line-height: 0;
+}
+
+
+
 .about-tagline-paragraph {
     margin-right: 10%;
     margin-left:5%;
@@ -4490,7 +4503,11 @@ figure {
 
 .process-title {
     margin-bottom: 5%;
-    margin-right: 30%
+    margin-right: 20%
+}
+
+.text-left{
+    text-align: end;
 }
 
 .process-grid {
